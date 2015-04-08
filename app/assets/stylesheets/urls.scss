@@ -1,3 +1,27 @@
 // Place all the styles related to the urls controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.space{
+	padding:30px
+}
+
+.btn-wrapper{
+	text-align: center;
+	padding: 10px
+}
+
+ #map-canvas {
+	height: 300px;
+	width: 100%;
+	margin: 0px;
+	padding: 0px
+}
+#panel {
+	position: relative;
+	top: 5px;
+	z-index: 5;
+	background-color: #fff;
+	padding: 5px;
+	border: none;
+}

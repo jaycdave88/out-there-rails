@@ -3,6 +3,7 @@
 var geocoder;
 var map;
 var markers = [];
+
 function initialize() {
 	geocoder = new google.maps.Geocoder();
 	var latlng = new google.maps.LatLng(37.7845732, -122.39744000000002);
@@ -19,14 +20,18 @@ function addMarker(location) {
     map: map
   });
   markers.push(marker);
+
+// local variables that I need to make global 
+	latitude = location.k;
+	longitude = location.D;
+  
 }
+console.log(longitude)
 
   google.maps.event.addListener(map, 'click', function(event) {
     addMarker(event.latLng);
   });
-
   addMarker(latlng);
-
 }
 
 function setAllMap(map) {

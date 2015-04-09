@@ -2,8 +2,9 @@
 <script>
 var geocoder;
 var map;
+// var latitude;
+// var longitude;
 var markers = [];
-
 function initialize() {
 	geocoder = new google.maps.Geocoder();
 	var latlng = new google.maps.LatLng(37.7845732, -122.39744000000002);
@@ -12,46 +13,47 @@ function initialize() {
 		center: latlng,
 		scrollwheel: false
 	}
+
 	map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-function addMarker(location) {
-  var marker = new google.maps.Marker({
-    position: location,
-    map: map
-  });
-  markers.push(marker);
+	function addMarker(location) {
+		var marker = new google.maps.Marker({
+			position: location,
+			map: map
+		});
+		markers.push(marker);
+		console.log("I am the lat for addMarker: "+marker.position.k)
+		console.log("I am the lng for addMarker: " + marker.position.D)
+		
+	}	
 
-// local variables that I need to make global 
-	latitude = location.k;
-	longitude = location.D;
-  
-}
-console.log(longitude)
+google.maps.event.addListener(map, 'click', function(event) {
+	addMarker(event.latLng);
+});
+addMarker(latlng);
+console.log("I am the starting lat after addMarker is called: "+latlng.k)
+console.log("I am the starting lng after addMarker is called: "+latlng.D)
 
-  google.maps.event.addListener(map, 'click', function(event) {
-    addMarker(event.latLng);
-  });
-  addMarker(latlng);
 }
 
 function setAllMap(map) {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(map);
-  }
+	for (var i = 0; i < markers.length; i++) {
+		markers[i].setMap(map);
+	}
 }
 
 function clearMarkers() {
-  setAllMap(null);
+	setAllMap(null);
 
 }
 
 function showMarkers() {
-  setAllMap(map);
+	setAllMap(map);
 }
 
 function deleteMarkers() {
-  clearMarkers();
-  markers = [];
+	clearMarkers();
+	markers = [];
 }
 
 function codeAddress() {
@@ -64,6 +66,8 @@ function codeAddress() {
 				position: results[0].geometry.location,
 			});
 			markers.push(marker)
+			console.log("I am the lng in codeAddress function: "+marker.position.D)
+			console.log("I am the lat in codeAddress function: "+marker.position.k)
 		} else {
 			alert('Geocode was not successful for the following reason: ' + status);
 		}
@@ -71,6 +75,5 @@ function codeAddress() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
 </script>
 <div id="map-canvas"></div>

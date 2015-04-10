@@ -1,0 +1,55 @@
+<h1>testing instagram partial</h1>
+
+<script>
+var codeAddressLat;
+var codeAddressLng;
+var addMarkerLat;
+var addMarkerLng;
+var locationLat;
+var locationLong;
+var accessToken;
+var mediaEndPoint;
+
+
+
+$(document).ready(function(){
+
+
+	var accessToken="271040506.e9d51ab.95707dbb77d34d8c8393fd3093e30e07";
+
+	$('.get_photo').click(function(){
+
+		if (addMarkerLng !== null  &&  addMarkerLat !== null ) {
+			locationLong=addMarkerLng;
+			locationLat=addMarkerLat;
+			console.log("Add Marker " + mediaEndPoint)
+		}else if (codeAddressLat !== null && codeAddressLng !== null) {
+			locationLat=codeAddressLat;
+			locationLong=codeAddressLng;
+			console.log("Code Address: "+ mediaEndPoint)
+		}else{
+			alert("Oops! Something went wrong, please try again!")
+		}
+		mediaEndPoint = "https://api.instagram.com/v1/media/search?lat=" + locationLat + "&lng=" + locationLong + "&access_token=" + accessToken + "&callback=?";
+
+		$(".insta-list").empty();
+
+		$.getJSON(mediaEndPoint, function(jsonResult){
+
+			var items = jsonResult["data"];
+			var container =[]
+			$.each(items, function(){
+				var val = this["images"]["standard_resolution"]["url"]
+				container.push("<img src=" + val + ">" );
+
+			});
+			$("<ul/>",{
+				"class": "insta-list",
+				html: container.join( "" )
+			}).appendTo(".modal-body");
+		})
+
+	});
+});
+
+</script>

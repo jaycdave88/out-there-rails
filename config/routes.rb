@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "urls#index"
+	
+  root "urls#index" 
   resources :urls
 
   get "/about" => 'urls#about'

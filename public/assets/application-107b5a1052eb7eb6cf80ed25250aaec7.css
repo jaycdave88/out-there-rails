@@ -1,0 +1,47 @@
+/* line 5, /Users/devmode/Desktop/CODE/out_there_rails/app/assets/stylesheets/urls.scss */
+.btn-wrapper {
+  text-align: center;
+}
+
+/* line 9, /Users/devmode/Desktop/CODE/out_there_rails/app/assets/stylesheets/urls.scss */
+#map-canvas {
+  height: 300px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 16, /Users/devmode/Desktop/CODE/out_there_rails/app/assets/stylesheets/urls.scss */
+#panel {
+  position: relative;
+  top: 5px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: none;
+}
+
+/* line 25, /Users/devmode/Desktop/CODE/out_there_rails/app/assets/stylesheets/urls.scss */
+.insta-list > img {
+  width: 100%;
+}
+
+/* line 29, /Users/devmode/Desktop/CODE/out_there_rails/app/assets/stylesheets/urls.scss */
+body > .container {
+  margin-top: 60px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */

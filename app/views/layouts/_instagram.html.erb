@@ -10,13 +10,10 @@ var locationLat;
 var locationLong;
 var accessToken;
 var mediaEndPoint;
-
+var accessToken;
 
 
 $(document).ready(function(){
-
-
-	var accessToken="271040506.e9d51ab.95707dbb77d34d8c8393fd3093e30e07";
 
 	$('.get_photo').click(function(){
 
@@ -24,10 +21,6 @@ $(document).ready(function(){
 			locationLong=addMarkerLng;
 			locationLat=addMarkerLat;
 			console.log("Add Marker " + mediaEndPoint)
-		}else if (codeAddressLat !== null && codeAddressLng !== null) {
-			locationLat=codeAddressLat;
-			locationLong=codeAddressLng;
-			console.log("Code Address: "+ mediaEndPoint)
 		}else{
 			alert("Oops! Something went wrong, please try again!")
 		}

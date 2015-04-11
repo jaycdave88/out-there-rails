@@ -16,7 +16,3 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#modal_target > div.modal-backdrop.in{
-	height:0 auto !important;
-	overflow-y: auto;
-}

@@ -21,8 +21,6 @@ function initialize() {
 			map: map
 		});
 		markers.push(marker);
-		// console.log("I am the lat for addMarker: "+marker.position.k)
-		// console.log("I am the lng for addMarker: " + marker.position.D)
 		addMarkerLng=marker.position.D
 		addMarkerLat=marker.position.k
 		
@@ -32,8 +30,6 @@ function initialize() {
 		addMarker(event.latLng);
 	});
 	addMarker(latlng);
-	// console.log("I am the starting lat after addMarker is called: "+latlng.k)
-	// console.log("I am the starting lng after addMarker is called: "+latlng.D)
 	startingLng=latlng.D
 	startingLat=latlng.k
 }
@@ -69,10 +65,9 @@ function codeAddress() {
 				position: results[0].geometry.location,
 			});
 			markers.push(marker)
-			// console.log("I am the lng in codeAddress function: "+marker.position.D)
-			// console.log("I am the lat in codeAddress function: "+marker.position.k)
-			codeAddressLat=marker.position.k
-			codeAddressLng=marker.position.D
+			addMarkerLat=marker.position.k
+			addMarkerLng=marker.position.D
+
 		} else {
 			alert('Geocode was not successful for the following reason: ' + status);
 		}

@@ -16,6 +16,9 @@ var accessToken;
 $(document).ready(function(){
 
 	$('.get_photo').click(function(){
+		$('#modal-content').modal({
+        show: true
+    });
 
 		if (addMarkerLng !== null  &&  addMarkerLat !== null ) {
 			locationLong=addMarkerLng;
@@ -37,7 +40,7 @@ $(document).ready(function(){
 				container.push("<img src=" + val + ">" );
 
 			});
-			$("<ul/>",{
+			$("<div/>",{
 				"class": "insta-list",
 				html: container.join( "" )
 			}).appendTo(".modal-body");

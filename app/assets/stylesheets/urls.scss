@@ -22,39 +22,14 @@
 	border: none;
 }
 
-.modal-backdrop {
-  z-index: -1;
-  height:2000%;
-}
-
-#modal_target > div.modal-dialog > div > div.modal-body{
-	width: 200px;
-}
-
-#modal_target > div.modal-dialog > div > div.modal-body > ul{
-    margin: -15px 0px -16px -27px;
-}
-
-.modal-dialog {
-  width: 700px;
-}
-
 .copy_write{
 	padding:5%;
 }
 
-.modal-dialog {
-  width: 700px;
+.insta-list > img {
+    width: 100%;
 }
 
-.modal-content {
-  width: 700px;
-}
-
-.modal-content {
-  width: 700px;
-  margin-left: -75px;
-}
-.modal-backdrop.fade{
-	opacity: .5;
+body >.container{
+	margin-top: 60px;
 }

@@ -34,10 +34,10 @@ $(document).ready(function(){
 			var container =[]
 			$.each(items, function(){
 				var val = this["images"]["standard_resolution"]["url"]
-				container.push("<img src=" + val + ">" );
+				container.push("<img id='instgram_image' src=" + val + ">" );
 
 			});
-			$("<ul/>",{
+			$("<div>",{
 				"class": "insta-list",
 				html: container.join( "" )
 			}).appendTo(".modal-body");

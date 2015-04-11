@@ -22,30 +22,11 @@
 	border: none;
 }
 
-.modal-backdrop {
-  z-index: -1;
+.insta-list > img {
+    width: 100%;
 }
 
-#modal_target > div.modal-dialog > div > div.modal-body{
-	margin: none;
+body >.container{
+	margin-top: 60px;
 }
 
-#modal_target > div.modal-dialog > div > div.modal-body > ul{
-    margin: -15px 0px -16px -27px;
-}
-
-.copy_write{
-	padding:5%;
-}
-
-.modal-backdrop.fade{
-	opacity: .5;
-}
-
-.insta_list{
-background-color:red;
-}
-
-#instgram_image{
-	width:100%;
-}

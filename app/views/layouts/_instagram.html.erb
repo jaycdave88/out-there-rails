@@ -17,6 +17,9 @@ $(document).ready(function(){
 var accessToken="271040506.401f368.1208ccda57f8401eac982f8bc40d5e54";
 
 	$('.get_photo').click(function(){
+		$('#modal-content').modal({
+        show: true
+    });
 
 		if (addMarkerLng !== null  &&  addMarkerLat !== null ) {
 			locationLong=addMarkerLng;
@@ -38,7 +41,8 @@ var accessToken="271040506.401f368.1208ccda57f8401eac982f8bc40d5e54";
 				container.push("<img id='instgram_image' src=" + val + ">" );
 
 			});
-			$("<div>",{
+
+			$("<div/>",{
 				"class": "insta-list",
 				html: container.join( "" )
 			}).appendTo(".modal-body");

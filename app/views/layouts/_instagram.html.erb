@@ -10,14 +10,14 @@ var locationLat;
 var locationLong;
 var accessToken;
 var mediaEndPoint;
-var accessToken;
-
 
 
 $(document).ready(function(){
 
 
 	$('.get_photo').click(function(){
+
+
 		$('#modal-content').modal({
         show: true
     });
@@ -25,10 +25,10 @@ $(document).ready(function(){
 		if (addMarkerLng !== null  &&  addMarkerLat !== null ) {
 			locationLong=addMarkerLng;
 			locationLat=addMarkerLat;
-			console.log("Add Marker " + mediaEndPoint)
 		}else{
 			alert("Oops! Something went wrong, please try again!")
 		}
+
 		mediaEndPoint = "https://api.instagram.com/v1/media/search?lat=" + locationLat + "&lng=" + locationLong + "&access_token=" + accessToken + "&callback=?";
 
 		$(".insta-list").empty();

@@ -1,4 +1,3 @@
-
 <script>
 var geocoder;
 var map;
@@ -21,17 +20,16 @@ function initialize() {
 			map: map
 		});
 		markers.push(marker);
-		addMarkerLng=marker.position.D
-		addMarkerLat=marker.position.k
-		
+		addMarkerLng=marker.position.F
+		addMarkerLat=marker.position.A
 	}	
 
 	google.maps.event.addListener(map, 'click', function(event) {
 		addMarker(event.latLng);
 	});
 	addMarker(latlng);
-	startingLng=latlng.D
-	startingLat=latlng.k
+	startingLng=latlng.A
+	startingLat=latlng.F
 }
 
 
@@ -65,8 +63,8 @@ function codeAddress() {
 				position: results[0].geometry.location,
 			});
 			markers.push(marker)
-			addMarkerLat=marker.position.k
-			addMarkerLng=marker.position.D
+			addMarkerLat=marker.position.A
+			addMarkerLng=marker.position.F
 
 		} else {
 			alert('Geocode was not successful for the following reason: ' + status);
